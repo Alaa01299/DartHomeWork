@@ -35,7 +35,7 @@ void withdraw(double amount) {
   }
 
   if (amount > balance) {
-    print("\nلا يمكن سحب مبلغ أكبر من الرصيد.\n");
+    print("\n you can't withdrow more than your balance\n");
     return;
   }
 
@@ -43,19 +43,19 @@ void withdraw(double amount) {
   withdrawCount++;
   dailyWithdrawTotal += amount;
 
-  print("\nتم سحب $amount ريال بنجاح.");
-  print("رصيدك الحالي: $balance ريال");
-  print("عدد السحوبات المتبقية اليوم: ${3 - withdrawCount}\n");
+  print("\n you withdrowed $amount .");
+  print(" : your balance $balance ");
+  print(" you have : ${3 - withdrawCount} times to withdrow\n");
 }
 
 void main() {
   while (true) {
-    print("PLZ select operation from menu :");
-    print("1. Show Balance (عرض الرصيد)");
-    print("2. Deposit (إيداع)");
-    print("3. Withdraw (سحب)");
-    print("4. Exit (خروج)");
-    stdout.write("Enter your choice: ");
+    print("choose operation :");
+    print("1- Show Balance");
+    print("2- Deposit ");
+    print("3- Withdraw ");
+    print("4- Exit ");
+    print("Enter your choice: ");
 
     String? choice = stdin.readLineSync();
 
@@ -65,13 +65,13 @@ void main() {
         break;
 
       case "2":
-        stdout.write("Enter deposit amount: ");
+        print("Enter deposit amount: ");
         double amount = double.parse(stdin.readLineSync()!);
         deposit(amount);
         break;
 
       case "3":
-        stdout.write("Enter withdraw amount: ");
+        print("Enter withdraw amount: ");
         double amount = double.parse(stdin.readLineSync()!);
         withdraw(amount);
         break;
