@@ -5,29 +5,29 @@ class Car {
   int year;
   bool isElectric;
   double price;
-  int passengerCapacity;
+  int passengerCount;
 
   Car({
     required this.brand,
     required this.year,
     required this.isElectric,
     required this.price,
-    required this.passengerCapacity,
+    required this.passengerCount,
   });
 
   void checkElectric() {
     if (isElectric) {
-      print("$brand is an electric car.");
+      print("$brand is an electric.");
     } else {
-      print("$brand is NOT an electric car.");
+      print("$brand is not an electric.");
     }
   }
 
   void checkYear() {
     if (year >= 2020) {
-      print("$brand is a modern car.");
+      print("$brand is a modern.");
     } else {
-      print("$brand is an old car.");
+      print("$brand is an old.");
     }
   }
 
@@ -43,7 +43,7 @@ class Car {
     print("Year: $year");
     print("Electric: $isElectric");
     print("Price: ${price}");
-    print("Passenger Capacity: $passengerCapacity");
+    print("Passenger Capacity: $passengerCount");
     print("Maintenance Cost: ${calculateMaintenanceCost()}\n");
   }
 }
@@ -54,7 +54,7 @@ void main() {
     year: 2022,
     isElectric: true,
     price: 35000,
-    passengerCapacity: 5,
+    passengerCount: 5,
   );
 
 
@@ -72,11 +72,10 @@ void main() {
   double price = double.parse(stdin.readLineSync()!);
 
   print("Enter passenger capacity: ");
-  int capacity = int.parse(stdin.readLineSync()!);
+  int count = int.parse(stdin.readLineSync()!);
 
-  Car car2 = Car( brand: brand, year: year, isElectric: isElectric, price: price, passengerCapacity: capacity,);
+  Car car2 = Car( brand: brand, year: year, isElectric: isElectric, price: price, passengerCount: count,);
 
-  // عرض بيانات الكائنين
   print("\n Car 1 Data ");
   car1.getCarInfo();
 

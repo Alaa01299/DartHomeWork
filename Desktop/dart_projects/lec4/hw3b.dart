@@ -49,7 +49,7 @@ class Car {
 
   double? getTotalPrice() => _totalPrice;
 
-  void getCarInfo() {
+  void printCarInfo() {
     print(" Car Info ");
     print("Car ID : $_carID");
     print("Car Name : $_carName");
@@ -66,8 +66,8 @@ void main() {
   Car car2 = Car(2, "Ford", "Sport", 45000);
 
   print("\n old info ");
-  car1.getCarInfo();
-  car2.getCarInfo();
+  car1.printCarInfo();
+  car2.printCarInfo();
 
   car1.setPrice(23000);
   car1.setName("Toyota 2022");
@@ -76,6 +76,6 @@ void main() {
   car2.setPrice(42000);
 
   print("\n new info ");
-  car1.getCarInfo();
-  car2.getCarInfo();
+  car1.printCarInfo();
+  car2.printCarInfo();
 }
