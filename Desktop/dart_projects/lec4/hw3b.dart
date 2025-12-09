@@ -1,4 +1,5 @@
 class Car {
+  
   int? _carID;
   String? _carName;
   String? _carType;
@@ -20,62 +21,74 @@ class Car {
     }
   }
 
-  void setId(int id) {
-    _carID = id;
+  void set setId(int id) {
+    this._carID = id;
   }
 
-  void setName(String name) {
-    _carName = name;
+  void set setName(String name) {
+    this._carName = name;
   }
 
-  void setType(String type) {
-    _carType = type;
+  void set setType(String type) {
+    this._carType = type;
   }
 
-  void setPrice(double price) {
-    _carPrice = price;
+  void set setPrice(double price) {
+    this._carPrice = price;
     _calculateTotalPrice();
   }
 
-  int? getId() => _carID;
+  int? get getId {
+    return _carID;
+  }
 
-  String? getName() => _carName;
+  String? get getName {
+    return _carName;
+  }
 
-  String? getType() => _carType;
+  String? get getType {
+    return _carType;
+  }
 
-  double? getPrice() => _carPrice;
+  double? get getPrice {
+    return _carPrice;
+  }
 
-  double getDiscount() => _discount;
+  double get getDiscount {
+    return _discount;
+  }
 
-  double? getTotalPrice() => _totalPrice;
+  double? get getTotalPrice {
+    return _totalPrice;
+  }
 
-  void printCarInfo() {
+  void getCarInfo() {
     print(" Car Info ");
     print("Car ID : $_carID");
     print("Car Name : $_carName");
     print("Car Type : $_carType");
     print("Car Price : $_carPrice");
     print("Discount : ${_discount * 100}%");
-    print("Total Price : $_totalPrice\n");
+    print("Total Price : $_totalPrice \n");
   }
 }
 
 void main() {
-
+  
   Car car1 = Car(1, "Toyota", "Sedan", 25000);
   Car car2 = Car(2, "Ford", "Sport", 45000);
 
-  print("\n old info ");
-  car1.printCarInfo();
-  car2.printCarInfo();
+  print("\n Before Update ");
+  car1.getCarInfo();
+  car2.getCarInfo();
 
-  car1.setPrice(23000);
-  car1.setName("Toyota 2022");
+  car1.setPrice = 23000;
+  car1.setName = "Toyota 2022";
 
-  car2.setType("Muscle Car");
-  car2.setPrice(42000);
+  car2.setType = "Muscle Car";
+  car2.setPrice = 42000;
 
-  print("\n new info ");
-  car1.printCarInfo();
-  car2.printCarInfo();
+  print("\n After Update ");
+  car1.getCarInfo();
+  car2.getCarInfo();
 }
